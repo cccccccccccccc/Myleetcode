@@ -1,3 +1,7 @@
+# time complexity = O(n) space complexity = O(1)
+# F(i) = max{F(i-1)+a[i],0}  DP（dynamic programming 
+# if tmpmax < 0 tmpmax = 0 turn to next index 
+#  maxsum = max(tmpmax)
 from typing import List
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
