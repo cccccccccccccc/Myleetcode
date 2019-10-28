@@ -1,3 +1,5 @@
+# time complexity = O(n) space complexity = O(1) 
+# from begin and end, get area  if tmpheight == begin begin+=1 else end -=1 because the smallone may turn to add area 
 from typing import List
 class Solution:
     def maxArea(self, height: List[int]) -> int:
