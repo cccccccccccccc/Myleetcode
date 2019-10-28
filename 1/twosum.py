@@ -1,3 +1,5 @@
+# time complexity=O(n) space complexity = O(n) 
+#  hash key=nums[i] value = i  through target-nums[i] find if sum is available
 from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
