@@ -1,3 +1,7 @@
+'''
+sort the array 
+sum every element if it can %2 ==0
+'''
 from typing import List
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
