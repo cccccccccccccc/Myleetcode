@@ -1,3 +1,7 @@
+# time complexity = O(n^2) space complexity = O(n)
+#  first sort the list 
+#  traverse the list: use left right as point notice that no item can be repeated 
+#  traverse need skip the same items; left and right point need to skip the same items
 from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
