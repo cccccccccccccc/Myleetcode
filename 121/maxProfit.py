@@ -3,14 +3,13 @@
 Created on Fri Dec 29 14:43:57 2017
 
 @author: chen
-"""
+
 
 class Solution(object):
     def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+        
+        #:type prices: List[int]
+        #:rtype: int
         if len(prices) <=1:
             return 0
         minp = prices[0]
@@ -28,3 +27,25 @@ class Solution(object):
         return best
 A= Solution()
 print(A.maxProfit([3,2,6,5,0,3]))
+
+"""
+from typing import List
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        best = 0
+        if len(prices)<=1:
+            return best
+        buy = prices[0]        
+        for i in prices[1:]:
+            if buy >= i:
+                buy = i
+            else:
+                best = max(best, (i-buy))
+
+        return best
+    
+
+A = Solution()
+a = [7,6,5,3,1]
+print(A.maxProfit(a))
