@@ -1,3 +1,8 @@
+'''
+time complexity=O(n) space complexity = O(1) 
+hash nums 
+mark maxcount and return element
+'''
 from typing import List
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:

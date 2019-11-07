@@ -29,6 +29,12 @@ A= Solution()
 print(A.maxProfit([3,2,6,5,0,3]))
 
 """
+'''
+time complexity=O(n) space complexity = O(1) 
+best = max{best,a[i]-x}
+x = min{x, a[i]}
+
+'''
 from typing import List
 
 class Solution:
