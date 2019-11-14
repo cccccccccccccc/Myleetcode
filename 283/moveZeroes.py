@@ -1,3 +1,9 @@
+'''
+timecomplexity = O(n) spacecomplexity = O(1)
+get zeronum 
+traversing nums instead all non zero num to foward
+mark nonzero nums' index
+'''
 from typing import List
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
@@ -15,7 +21,6 @@ class Solution:
                 nums[j] = nums[i]
                 j+=1
         nums[j:] = [0]*zeronum
-        print(nums)
         return
 A = Solution()
 a = [0,1,0,3,12]

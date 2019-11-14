@@ -4,6 +4,13 @@ Created on Tue Feb  6 13:24:05 2018
 
 @author: chen
 """
+"""
+time complexity = O(n) space complexity = 0
+can think about this from the last index m+n-1 judge m-1 n-1 which one is bigger  
+remeber if m <=0 need to insert nums2 into nums1
+
+"""
+from typing import List
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         """
