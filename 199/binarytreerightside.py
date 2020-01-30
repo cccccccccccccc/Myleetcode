@@ -9,6 +9,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
+    def getrightSidefirstnode(self,node,height):
         if not node :
             return 
         if height > len(self.aswlist):
