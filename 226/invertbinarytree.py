@@ -1,9 +1,16 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+timecomplexity = O(n) spacecomlexity = O(1)
+inverttree is recusive func
+swap root's left and right pointer
+then call the recusive function contiue on left and right subtree
+
+"""
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:

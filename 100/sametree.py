@@ -1,9 +1,16 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+timecomplexity = O(n) 
+Space complexity : O(log(N)) in the best case of completely balanced tree and )O(N) in the worst case of completely unbalanced tree, to keep a recursion stack.
+
+construct recusive function  check the special tase: two empty tree and one empty one unempty , if the value in two treenode is the same boolen is true and recusivly its two subtree 
+return the boolen in the end 
+"""
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:

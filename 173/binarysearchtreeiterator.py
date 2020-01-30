@@ -1,3 +1,6 @@
+"""
+next()and hasnext() timecomplexity = O(1) spacecomplexity = O(h) h is the heght of the tree
+"""
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):

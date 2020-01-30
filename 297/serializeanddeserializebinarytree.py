@@ -4,7 +4,14 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+"""
+timecomplexity= O(n) spacecomplexity = O(n)
+serialize
+construct recusive function to covert tree into string replace None by '# ' and use ' ' to separate each node
+deserialize
+At first, define a list which element is from the string split ' ', then check special tase if len is 0 or only '#' in the List
+construct recusive function to get tree node from the List by pop the [0] from it. 
+"""
 class Codec:
 
     def serialize(self, root):

@@ -1,3 +1,11 @@
+"""
+timecomplexity = O(n) spacecomplexity = O(n)
+
+func get maxdepth from leftsubtree and rightsubtree recusivly 
+get the max from two subtree
+remember add 1 for root
+compute leftsubtree 
+"""
 class TreeNode:
     def __init__(self,x):
         self.val = x

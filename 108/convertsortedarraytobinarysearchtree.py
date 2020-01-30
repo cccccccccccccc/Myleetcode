@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 """
+timecomplexity = O(n) spacecomplexity = O(n)
 Implement helper function helper(left, right), which constructs BST from nums elements between indexes left and right:
 
 If left > right, then there is no elements available for that subtree. Return None.

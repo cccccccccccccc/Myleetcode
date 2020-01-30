@@ -1,5 +1,10 @@
 """
 time complexity = O(n) space complexity = O(n)
+define a map which val:index is enumerate from inorder list 
+use recusive function helper(left,right) to construct tree
+use preorder list to get everylevel's rootnode point pre_idx from [0]
+use the map to find left and right subtrees' range 
+and recusivly leftsubtree and rightsubtree to the end 
 """
 # Definition for a binary tree node.
 from typing import List

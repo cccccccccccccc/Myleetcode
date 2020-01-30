@@ -1,9 +1,13 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+timecomplexity the best is completely unbalance tree is O(n) the worst is completely balance tree is O(n)
+spacecomplexity O(log(n)) 
+"""
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
