@@ -10,13 +10,7 @@ class Solution:
         if l2 is None:
             return l1
         head = ListNode()
-        if l1.val <= l2.val:
-            node = l1
-            l1 = l1.next
-        else:
-            node = l2
-            l2 = l2.next
-        head.next =node
+        node = head
         while l1 is not None or l2 is not None:
             if l1 is None:
                 node.next = l2
