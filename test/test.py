@@ -1,0 +1,1 @@
+names = input("Enter names separated by commas: ").title().split(",")

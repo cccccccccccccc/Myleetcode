@@ -11,27 +11,37 @@ class ListNode(object):
         self.val = x
         self.next = None
 
-class Solution(object):
-    def hasCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
-        if head == None:
+# class Solution(object):
+#     def hasCycle(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: bool
+#         """
+#         if head == None:
+#             return False
+#         middleN = endN = head
+#         count = 1
+#         while endN != None:
+#             if endN.next ==None:
+#                 return False
+#             endN = endN.next            
+#             if count%2 ==0:
+#                 middleN = middleN.next
+#             if endN == middleN:
+#                 return True
+#             count+=1
+#         return False
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        if head is None:
             return False
-        middleN = endN = head
-        count = 1
-        while endN != None:
-            if endN.next ==None:
-                return False
-            endN = endN.next            
-            if count%2 ==0:
-                middleN = middleN.next
-            if endN == middleN:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
                 return True
-            count+=1
-        return False
-    
+        return False    
 a= ListNode(0)
 b = ListNode(1)
 c = ListNode(2)
@@ -40,4 +50,4 @@ b.next = c
 c.next  = b
 D = None
 A = Solution()
-print(A.hasCycle(D))
+print(A.hasCycle(a))
