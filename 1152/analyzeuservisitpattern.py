@@ -2,7 +2,7 @@ from typing import List
 from collections import defaultdict
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
-        userdict = collection.defaultdict(List)
+        userdict = defaultdict(list)
         for t,u,w in sorted(zip(timestamp,username,website)):
             userdict[u].append(w)
         threeseq = {}
