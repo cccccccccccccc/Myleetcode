@@ -1,5 +1,6 @@
 
 from typing import List
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if len(nums) <= 0:
@@ -24,6 +25,7 @@ class Solution:
 A = Solution()
 a = [4,5,6,7,0,1,2]
 b = [3,1]
+
 '''
 print(A.search(a,1))
 print(A.search(a,4))
@@ -33,7 +35,6 @@ print(A.search(a,0))
 print(A.search(a,2))
 print(A.search(a,3))
 print(A.search(a,-1))
-'''
+
 print(A.search(b,1))
-
-
+'''
