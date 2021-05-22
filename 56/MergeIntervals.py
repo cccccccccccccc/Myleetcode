@@ -5,17 +5,17 @@ if list is null return
 
 iterate sorted list by every element's start 
 
-if answer list is empty or the last one's end in answer bigger than current element's start:  append
-else max last one's end in auswerlist , current element's start
+if answer list is empty or the last one's end in answer smaller than current element's start:  append
+else max last one's end in auswerlist , current element's end
 
 """
 from typing import List
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        if len(intervals)<=0:
+        if len(intervals)<=1:
             return intervals
         ans = []
-        for i in sorted(intervals,key = lambda x:x[0]):
+        for i in sorted(intervals,key= lambda x:x[0]):
             if not ans or ans[-1][1] < i[0]:
                 ans.append(i)
             else:

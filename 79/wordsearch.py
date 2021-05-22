@@ -1,3 +1,14 @@
+"""
+timecomplexity = O(N*3^L)N is all the cells in grid L is length of word iterate all the cell in grid and each grid we have 3 direction(we cannot go back to where we come from)
+spacecomplexity = O(L) which flag use to contain grid is used
+use dfs
+flag set to check if is used grid
+iterate m, n in grid  mark flag  go dfs to check if there is a way  after remove the flag
+in dfs  if cur grid'value is not equal to word index( which is take by dfs to remember the index)
+move four direction check if is in range and if the new grid is used if not continue dfs 
+remember each time remove flag after operate.
+return answer
+"""
 from typing import List
 class Solution:
     def dfsword(self, i,j,board,index,word):

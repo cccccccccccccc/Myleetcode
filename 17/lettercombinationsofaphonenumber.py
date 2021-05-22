@@ -1,3 +1,7 @@
+"""
+timecomplexity = O(4^N*N) complexity = O(N)
+N is digits numebers length
+"""
 from typing import List
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:

@@ -1,5 +1,7 @@
-#timecomplexity = O(n) spacecomplexity = O(1)
+
 """
+timecomplexity = O(n) spacecomplexity = O(1)
+f(n) = f(n-1)+f(n-2)
 class Solution:
     def climbStairs(self, n: int) -> int:
         dp1=dp2 = 1

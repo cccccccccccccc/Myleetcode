@@ -1,4 +1,10 @@
 # Definition for singly-linked list.
+"""
+timecomplexity = O(L) L is length of listnode ,spacecomlexity = O(1)
+one pass dfs
+use recursive remainder length at each level. when find the last node set target node as length-n 
+after recursive check if cur level is length-n, if true remove cur.next 
+"""
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val

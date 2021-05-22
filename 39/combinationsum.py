@@ -1,3 +1,11 @@
+"""
+Let N be the number of candidates, T be the target value, and M be the minimal value among the candidates.
+timecomplexity = O(N^(t/m+1)) spacecomplexity = O(T/m)
+we can use dfs method which implemented with recursion
+define the recursive with candidates index target and curarray if target is 0 mean we found a kind of combination and can add to the finallist
+else, iterate from index to the len(candidates) if candidates[i]<target can add in cur combination and keep on recursive change target and index to be curvalue
+remember to pop cur value from combination after recursive to get more try .
+"""
 from typing import List
 class Solution:
     def dfs(self,nums,s,target,cur):

@@ -1,9 +1,13 @@
+"""
+timecomplexity = O(n1*n2) spacecomplexity = O(n1+n2)
+if n1=="0" n2=="0" return 0
+reverse two nums and iterate them to get index i,j and value n1,n2 check dict to get integer multiply them and if get carry add to index+1
+return the newnums use map to get str list and join them with '' at least remove left side '0'
+"""
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
         if num1 == '0' or num2 =='0':
             return '0'
-        if len(num1)<len(num2):
-            num1,num2 = num2,num1
         numdict = {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
         tmp1 = num1[::-1]
         tmp2 = num2[::-1]
@@ -15,13 +19,7 @@ class Solution:
                 newnum[pos+1] += newnum[pos]//10
                 newnum[pos] = newnum[pos]%10
         res = ''.join(map(str,newnum[::-1]))
-        m=0
-        while m < len(res):
-            if res[m] == '0':
-                m+=1
-            else:
-                break
-        return res[m:]
+        return res.lstrip('0')
 """
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:        
@@ -36,4 +34,4 @@ class Solution:
         return str(int1*int2)
 """
 A =Solution()
-print(A.multiply('123','456'))
+print(A.multiply('1234','456'))

@@ -1,4 +1,11 @@
-
+"""
+timecomplexity = O(logn) spacecomplexity = O(1)
+use binary search 
+l r is nums maxleft and maxright index get the middle index  
+iterate while l<r if m is target if not check compare nums[l] and nums[m] if nums[l]is less than nums[m] continue check nums[l] nums[m] and target 's relationship;
+if nums[l] is larger than nums[m] continue check if nums[m] nums[r] and target'srelationship  find out who need to be shift to the new place and continue
+if but the end still can not find the target return -1
+"""
 from typing import List
 
 class Solution:

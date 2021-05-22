@@ -1,5 +1,5 @@
 """
-time complexity = O(n^2) space complexity = O(n)
+time complexity = O(n^2) space complexity = O(1)
 sort nums
 iterate element in nums
 define left right = element+1, len(nums)-1

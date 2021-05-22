@@ -1,3 +1,10 @@
+"""
+timecomplexity = O(n) spacecomplexity = O(1)
+iterate to get the length of linked list, Divide by k, so we know how many sublinked list to be reverse
+iterate each sub list
+input prevnode  remind old head  iterate to reverse each node  after that linked newhead to prevnode and linked old head'next to next node 
+return old head as next iterate's input
+"""
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -9,12 +16,12 @@ class Solution:
         node = prev.next
         prev0 = prev
         for _ in range(k):
-            tmp = node.next
-            node.next = prev
-            prev = node
+            tmp = node.next # first remind next 
+            node.next = prev #swap
+            prev = node # shift 
             node = tmp
-        prev0.next = prev
-        remind.next = node
+        prev0.next = prev # prevtail'next is new head
+        remind.next = node # old head's next is next node
         return remind
     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         if k == 1 or head is None or head.next is None:
@@ -32,7 +39,7 @@ class Solution:
         cur = dew
         cur.next = head
         for _ in range(count):
-            cur = self.getreversebyK(cur,k)
+            cur = self.getreversebyK(cur,k)  # return is next sublinked list prevtail
         return dew.next
 A = Solution()
 a = ListNode(1)

@@ -25,3 +25,15 @@ class Solution:
             if len(tmp)> len(ansstr):
                 ansstr = tmp           
         return ansstr
+from collections import defaultdict
+class Solution:
+    maxl = 0
+    start = 0
+    end = 0
+    def longestPalindrome(self, s: str) -> str:
+        sdict = defaultdict(list)
+        for i,v in enumerate(s):
+            sdict[v].append(i)
+    for k in sdict.keys():
+        if len(sdict[k])>=2:
+            s

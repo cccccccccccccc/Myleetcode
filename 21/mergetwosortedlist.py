@@ -1,4 +1,8 @@
 # Definition for singly-linked list.
+"""
+timecomplexity = O(n+m) n,m is length of two linklists spacecomplexity  = O(n+m)
+
+"""
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
