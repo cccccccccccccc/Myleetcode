@@ -17,6 +17,7 @@ A = Solution()
 a = [3,2,4]
 b = 6
 print (A.twoSum(a,b))
+"""
 from collections import defaultdict
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -34,3 +35,4 @@ A = Solution()
 a = [3,2,4]
 b = 6
 print (A.twoSum(a,b))
+"""

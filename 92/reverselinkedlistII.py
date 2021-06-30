@@ -1,3 +1,11 @@
+"""
+timecomplexity = O(n) spacecomplexity = O(1)
+iterate single link to get start node m
+then think about the question is reverse single link totally
+in subfunction
+iterate to shift m to right, reverse two adjacent nodes when m == n remember get the original startnode.next to cur node next because after reverse left is to right 
+return prev main fuction
+"""
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
