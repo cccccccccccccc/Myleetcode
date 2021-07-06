@@ -1,3 +1,14 @@
+"""
+timecomplexity = O(n*log(n)+m*log(m)) spacecomplexity = O(1)
+iterate to get maxheight and max Width 
+first sort input horizontalcuts and verticalCuts 
+then add edge for this cake. add h in horizontalcuts and add w in verticalCuts 
+init maxh and maxw by index 0 so the initialize edge is also be used
+iterate the horizon and vertical by index to get maxh 
+max between cur two cuts and maxone get the larger one to undate max value
+
+
+"""
 from typing import List
 class Solution:
     def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:

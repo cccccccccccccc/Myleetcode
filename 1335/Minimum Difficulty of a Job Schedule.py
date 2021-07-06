@@ -9,8 +9,10 @@ class Solution:
         for i in range(1,d+1):
             for j in range(1,job+1):
                 #for x in range(i-1,j):
-                for x in range(0,j):
-                    dp[i][j] = min(dp[i][j],(dp[i-1][x]+max(jobDifficulty[x:j])))
+                maxd = 0
+                for x in range(j-1,-1,-1):
+                    maxd = max(maxd,jobDifficulty[x])
+                    dp[i][j] = min(dp[i][j],(dp[i-1][x]+maxd))
 
         return dp[d][job]
 A = Solution()
