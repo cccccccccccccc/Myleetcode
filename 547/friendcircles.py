@@ -1,3 +1,6 @@
+"""
+the same with leetcode 323
+"""
 from typing import List
 class DSU(object):
     def __init__(self,n):

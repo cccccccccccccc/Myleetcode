@@ -1,10 +1,19 @@
+"""
+timecomplexity = O(e*alpha(1)) e is nums of edge. because find and union operation is almost O(1) 
+use disjoint set  data stucture 
+in this  we iterate all the edges to union nodes together. which will make disjoint set forest. if there are edges between a cluster of nodes there will have the same 
+root
+then iterate all the node to count how many root there are return the result 
+find  recurative to find node's root by check if the node is root of itself. if not recurative to find its root
+unionedge compare two node's rank if not the some choose larger one be smaller one's father if same any one be father is ok
+"""
 from typing import List
 class DSU(object):
     def __init__(self,n):
-        self.parelist = list(range(n))
-        self.rank = [0]*n
+        self.parelist = list(range(n)) # remember each node's root
+        self.rank = [0]*n # rank is large means it is high level in the tree.
     def find(self,x):
-        if x != self.parelist[x]:
+        if x != self.parelist[x]: 
             self.parelist[x] = self.find(self.parelist[x])
         return self.parelist[x]
     def unionedge(self,x,y):

@@ -1,18 +1,21 @@
+"""
+timecomplexity = O(n*m) modify grid after search so every grid[n][m] can only be searched one time 
+dfs 
+iterate n and m grid 
+modify grid[n][m] if it == 1 after count as island then search four directions to recursive to get whole island 
+"""
 from typing import List
 class Solution:
-    def islandsize(self,n,m,grid):
-        if grid[n][m] == "0":
-            return 
+    def islandsize(self,n,m,grid): 
         maxm = len(grid[0])
         maxn = len(grid)
         move = [(1,0),(0,1),(-1,0),(0,-1)]
-        if grid[n][m] == "1":
-            grid[n][m] = "0"
-            for k in range(4):
-                nx = n+ move[k][0]
-                my = m+ move[k][1]
-                if nx >= 0 and my >= 0 and nx <maxn and my < maxm and grid[nx][my] == "1":
-                    self.islandsize(nx,my,grid)
+        grid[n][m] = "0"
+        for k in range(4):
+            nx = n+ move[k][0]
+            my = m+ move[k][1]
+            if nx >= 0 and my >= 0 and nx <maxn and my < maxm and grid[nx][my] == "1":
+                self.islandsize(nx,my,grid)
         return                           
     def numIslands(self, grid: List[List[str]]) -> int:
         if len(grid) == 0 :
