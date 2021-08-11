@@ -1,6 +1,6 @@
 """
 timecomplexity =O(n) spacecomplexity = O(1)
-if the Robot can have a circle in its rail, it need to go back to [0,0] or its face shoud not turn to north after a seris of moving 
+if the Robot can have a circle in its rail, it needs to go back to [0,0] or its face shoud not turn to north after a series of moves 
 use a list to store direction for robot
 use idx 0 to 3 to separate four side 0 is north 1 is right 3 is left 
 iterate instrctions to change idx by direction.

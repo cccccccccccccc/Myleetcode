@@ -1,5 +1,5 @@
 """
-timecomplexity = O(n*m) n is length of logs m is identifier in each log, worset m is length of each logs[i].length-2
+timecomplexity = O(n*m) n is length of logs m is identifier in each log, worst m is length of each logs[i].length-2
 separate original log list into two lists one is lettersublist the other is digitsublist.
 iterate logs check the first element after space' ' is letter consist it as a tuple first is log contents second is log identifier third is the whole log
 sort lettersublist 
