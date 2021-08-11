@@ -1,4 +1,20 @@
+"""
+timecomplexity = O(n)
+iterate array if i >0 ans*=1 if i<0 ans*=-1 of i==0 return 0
+"""
 from typing import List
+class Solution:
+    def arraySign(self, nums: List[int]) -> int:
+        ans = 1
+        for i in nums:
+            if i == 0:
+                return 0
+            elif i>0:
+                ans*=1
+            else:
+                ans*=-1
+        return ans
+"""
 class Solution:
     def arraySign(self, nums: List[int]) -> int:
         nums.sort()
@@ -15,7 +31,7 @@ class Solution:
         r = len(nums)
         
         while l<r:
-            mid = (r-l)//2
+            mid = l+(r-l)//2
             if nums[mid] < 0:
                 if nums[mid+1]> 0:
                     break
@@ -29,3 +45,4 @@ class Solution:
 A = Solution()
 nums = [9,72,34,29,-49,-22,-77,-17,-66,-75,-44,-30,-24]
 print(A.arraySign(nums))
+"""
