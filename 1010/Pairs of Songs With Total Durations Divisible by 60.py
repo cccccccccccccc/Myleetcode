@@ -19,10 +19,30 @@ class Solution:
                     else:
                         ans += timedict[another]-1
         return ans//2
-A = Solution()
-time = [60,60,60]
-print(A.numPairsDivisibleBy60(time))
-time = [30,20,150,100,40]
+"""
+timecomplexity = O(t) length of time, 
+moudle all time by 60 put the result into a list length is 60
+than iterate num from 0 to 30 
+if num is 0 or 30 mean there are two same time sum, so we need to make sure they are not sum with themself and the result should be divide by 2
+other 1 to 29  we can calculate them just by product i with 60-i  
+
+"""
+class Solution1:
+    def numPairsDivisibleBy60(self, time: List[int]) -> int:
+        timelist = [0]*60
+        for t in time:
+            timelist[t%60]+=1
+        ans = 0
+        for i in range(31):
+            if i == 0 or i == 30:
+                ans+= (timelist[i]*(timelist[i]-1))//2
+            else:
+                ans+=timelist[i]*timelist[60-i]
+        return ans        
+A = Solution1()
+#time = [60,60,60]
+#print(A.numPairsDivisibleBy60(time))
+time = [3,2,15,10,4]
 print(A.numPairsDivisibleBy60(time))
 '''
 (a+b)%60 = 0

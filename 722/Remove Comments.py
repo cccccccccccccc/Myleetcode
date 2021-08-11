@@ -1,4 +1,5 @@
 from typing import List
+"""
 class Solution:
     def removeComments(self, source: List[str]) -> List[str]:
         code = []
@@ -38,7 +39,37 @@ class Solution:
                     '''
                 
         return code
+        """
+class Solution:
+    def removeComments(self, source: List[str]) -> List[str]:
+        code = []
+        buff =""
+        isInblock = False
+        for s in source:
+            s1 = s+" "
+            isLastMatch = False
+            for i in range(1,len(s1)):
+                c = s[i-1:i+1]
+                if isLastMatch == False:
+                    if isInblock == False:
+                        if c == "//":
+                            break
+                        elif c == "/*":
+                            isInblock = True
+                            isLastMatch = True
+                        else:
+                            buff+=s[i-1]
+                    elif c == "*/":
+                        isInblock = False
+                        isLastMatch = True
+                else:
+                    isLastMatch = False
+            if isInblock ==False:
+                if buff != "":
+                    code.append(buff)
+                    buff = ""
+        return code
 A = Solution()
-s = ["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"]
+s = ["/*Test program */", "int main()//", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"]
 s1=["a/*comment", "line", "more_comment*/b"]
 print(A.removeComments(s))

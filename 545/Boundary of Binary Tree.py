@@ -1,4 +1,12 @@
 # Definition for a binary tree node.
+"""
+timecomplexity = O(n) 
+separate to iterate tree by leftboundary rightboundary ,check if node belong to left or right boundary  if left is not none node = node.left elif right is not none node
+= node.right. if both none mean the node is leaf break 
+recrustive to find leave in tree 
+remember to reverse rightboundary 
+at least sub all these list together
+"""
 from typing import List
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -47,4 +55,3 @@ class Solution:
         return [root.val] + leftbd + leafbd+ rightbd
 A = Solution()
 root = TreeNode(1)
-print(A.boundaryOfBinaryTree(root))

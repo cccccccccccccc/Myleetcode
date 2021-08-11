@@ -7,8 +7,59 @@ construct  function inserthead and removenode
 when we call get we need to do some thing : check if there are key in cache  not return -1  yes remove it from current position and insert to the head 
 when we call put we need to do sth: check if the capacity is full if not check if the element is in dict if yes do what get do  if no put it in dict add num and put it to head
                                     if capacity is full remove last node from end and do the same as a new node insert do.
+** remember before remove node we should del nodekey from dict or use a tmp to replace self.end.prev.
 """
 from collections import defaultdict
+class LRUNode:
+    def __init__(self,key = 0,value = 0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.num = 0
+        self.dict = defaultdict(LRUNode)
+        self.head = LRUNode()
+        self.end = LRUNode()
+        self.head.next = self.end
+        self.end.prev = self.head
+    def insertNode(self,node):
+        node.next = self.head.next 
+        node.prev = self.head
+        self.head.next.prev = node
+        self.head.next = node
+        return
+    def removeNode(self,node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        return 
+    def get(self, key: int) -> int:
+        if key in self.dict:
+            node = self.dict[key]
+            self.removeNode(node)
+            self.insertNode(node)
+            return node.value
+        else:
+            return -1
+    def put(self, key: int, value: int) -> None:
+        if self.num == self.capacity:
+            del self.dict[self.end.prev.key]
+            self.removeNode(self.end.prev)
+            self.num-=1
+        newnode = LRUNode(key,value)
+        self.dict[key] = newnode
+        self.insertNode(newnode)
+        self.num+=1
+        return
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 
 """
 class ListNode:
@@ -64,7 +115,7 @@ class LRUCache:
 # ["LRUCache","put","put","get","put","get","put","get","get","get"]
 # [[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]            
 
-"""
+
 class LinkNode:
     def __init__(self,key = 0,value = 0,prev = None,next = None):
         self.key = key
@@ -112,7 +163,7 @@ class LRUCache:
             self.dict[key]=newnode
             self.inserthead(newnode)
         return
-
+"""
 A = LRUCache(2) 
 A.put(1,1)
 A.put(2,2)
